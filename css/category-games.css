@@ -103,10 +103,6 @@
 .category-games__search-input::placeholder {
   color: var(--light-grey)
 }
-.category-games__search-input:focus ~ .category-games__search-clear {
-  opacity: 1;
-  visibility: visible
-}
 .category-games__search-btn,
 .category-games__search-clear {
   position: absolute;
@@ -136,6 +132,10 @@
   opacity: 0;
   visibility: hidden;
   transition: opacity .3s
+}
+.category-games__search-clear.active {
+  opacity: 1;
+  visibility: visible
 }
 .category-games__block {
   display: grid;

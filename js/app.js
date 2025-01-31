@@ -599,6 +599,7 @@ function initSliders() {
                 prevEl: ".swiper-button-prev",
                 nextEl: ".swiper-button-next",
             },
+            // loop: true,
             breakpoints: {
                 319.98: {
                     slidesPerView: 1.65,
@@ -892,3 +893,18 @@ autoSwitchTabs("[data-tabs-auto]", "[data-tabs-title]", "[data-tabs-body]", "100
 
 selectInit();
 spollers();
+
+if (document.querySelector(".category-games__search-input")) {
+    const input = document.querySelector(".category-games__search-input");
+    const button = document.querySelector(".category-games__search-clear");
+    const activeClass = "active";
+    input.addEventListener("input", function () {
+        if (input.value.trim()) button.classList.add(activeClass);
+        else button.classList.remove(activeClass);
+    });
+    button.addEventListener("click", function () {
+        input.value = "";
+        button.classList.remove(activeClass);
+        input.focus();
+    });
+}
